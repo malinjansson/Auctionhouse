@@ -4,6 +4,7 @@ export class Auction{
         public id:string, 
         public name:string, 
         public currentBid: Bidder,
+        public img: string,
         public minprice:number
         ){
     }

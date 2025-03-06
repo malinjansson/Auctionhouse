@@ -18,10 +18,6 @@ import { Auction } from "./data/auction";
       console.log(`connect_error due to ${err.message}`);
       });  
 
-  document.getElementById("backToAllAuctions")?.addEventListener("click", () => {
-    window.location.href = "index.html";
-  });
-
   const placeBidBtn = document.getElementById("placeBidBtn") as HTMLButtonElement;
 
   placeBidBtn.addEventListener("click", () => {
@@ -39,6 +35,13 @@ import { Auction } from "./data/auction";
   socket.on ('auctionData', (data: Auction) => {
     const auctionName = document.getElementById("auctionName") as HTMLElement;
     auctionName.innerHTML = data.name;
+
+    const auctionImg = document.getElementById("auctionImg") as HTMLImageElement;
+    auctionImg.src = data.img;
+
+    document.getElementById("backToAllAuctions")?.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
   })
 
   socket.on('errorMessage', (errorMessage:string) => {
