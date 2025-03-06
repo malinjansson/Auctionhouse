@@ -3,6 +3,7 @@ import http from 'http';
 import { Server, Socket } from 'socket.io';
 import *  as data  from './data/database';
 import cors from 'cors';
+import { Auction, Bidder } from './data/auction';
 
 const app = express();
 app.use(cors())
@@ -13,26 +14,37 @@ const io = new Server(server,{
   }
 });
 
-// Serve static files (frontend)
-app.use(express.static('public'));
+  // Serve static files (frontend)
+  app.use(express.static('public'));
 
-// Socket.IO connection
-io.on('connection', (socket: Socket) => {
-  console.log('A user connected:', socket.id);
+  // Socket.IO connection
+  io.on('connection', (socket: Socket) => {
+    console.log('A user connected:', socket.id);
 
-// // SMARTASTE ROOMHANTERINGEN
-//   var query = socket.handshake.query;
-//   var roomName = query.roomName as string;
-//   socket.join(roomName);
+  var query = socket.handshake.query;
+  var roomName = query.roomName as string;
+  socket.join(roomName);
 
-  // Lägg till socketio message placeBid (namn, belopp)
+  let auction = data.auctions.find(a => a.id === roomName) as Auction;
+  socket.emit("auctionData", auction);
+
+  socket.on('placeLatestBid', (data: {bidderName:string, bidAmount:number}) => {
+    if (data.bidAmount < auction.currentBid.bid) {
+      socket.emit('errorMessage', "Budet är för lågt")
+      return;
+    } 
+    
+    auction.currentBid.bid = data.bidAmount;
+    auction.currentBid.name = data.bidderName;
+
+    io.to(roomName).emit ('updated bid', {bidderName:data.bidderName, bidAmount:data.bidAmount})
+  })
 
   // Handle disconnection
   socket.on('disconnect', () => {
     console.log('A user disconnected:', socket.id);
   });
 });
-
 
 app.get('/api/auctions', (req, res) => {
   res.json(data.auctions);

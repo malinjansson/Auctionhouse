@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction House</title>
+</head>
+<body>
+
+    <div class="oneauction-container">
+
+        <button id="backToAllAuction">Back to all auction</button>
+
+        <h2>Auction:<span id="auctionName"></span></h2>
+
+        <div class="bid-container">
+            <p>Latest bidder:<span id="latestBidder"></span></p>
+            <p>Latest bid:<span id="latestBid"></span></p>
+        </div>
+
+        <div class="bidform-container">
+            <input type="text" id="bidderName" placeholder="Your name"/>
+            <input type="text" id="bidAmount" placeholder="Your bid"/>
+            <button id="placeBidBtn">Place bid</button>
+        </div>
+    </div>
+
+    <script type="module" src="./src/room.ts"></script>
+</body>
+</html>
