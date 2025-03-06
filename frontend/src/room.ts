@@ -54,10 +54,10 @@ import { Auction } from "./data/auction";
     console.log(data.bidderName)
 
     const highestBidder = document.getElementById("highestBidder") as HTMLElement;
-    const currentBid = document.getElementById("currentBid") as HTMLElement;
+    const currentPrice = document.getElementById("currentPrice") as HTMLElement;
   
     highestBidder.innerHTML = data.bidderName
-    currentBid.innerHTML = data.bidAmount.toString();
+    currentPrice.innerHTML = data.bidAmount.toString();
     
   })
 

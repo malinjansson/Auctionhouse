@@ -28,13 +28,15 @@ const io = new Server(server,{
   let auction = data.auctions.find(a => a.id === roomName) as Auction;
   socket.emit("auctionData", auction);
 
+  socket.emit('updated bid', {bidAmount:auction.currentBid.price, bidderName:auction.currentBid.name});
+
   socket.on('placeLatestBid', (data: {bidderName:string, bidAmount:number}) => {
-    if (data.bidAmount < auction.currentBid.bid) {
+    if (data.bidAmount < auction.currentBid.price) {
       socket.emit('errorMessage', "Budet är för lågt")
       return;
     } 
     
-    auction.currentBid.bid = data.bidAmount;
+    auction.currentBid.price = data.bidAmount;
     auction.currentBid.name = data.bidderName;
 
     io.to(roomName).emit ('updated bid', {bidderName:data.bidderName, bidAmount:data.bidAmount})

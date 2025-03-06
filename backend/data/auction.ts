@@ -13,6 +13,6 @@ export class Auction{
 export class Bidder{
     constructor(
         public name: string,
-        public bid: number
+        public price: number
     ) {}
 }
