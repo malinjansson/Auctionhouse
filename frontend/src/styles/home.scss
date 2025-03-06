@@ -1,0 +1,51 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+
+.auction-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+}
+
+
+.heading {
+        padding-bottom: 1em;
+
+    h2 {
+        font-family: v.$heading-font-family;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        color: v.$primary-color;
+    }
+  }
+  
+  table {
+        width: 100%;
+        border-collapse: collapse;
+        
+        font-family: v.$primary-font-family;
+        font-size: 14px;
+  
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 0.5px solid #ddd;
+    }
+
+    td {
+        a {
+            background-color: #90a18c;
+            color: v.$secondary-color;
+            border-radius: 3px;
+            padding: 5px 20px;
+            text-decoration: none;
+        }
+    }
+
+    thead {
+        background-color: #f8f8f6;
+        font-weight: bold;
+    }
+  }

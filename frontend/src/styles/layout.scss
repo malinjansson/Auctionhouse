@@ -1,0 +1,48 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid black;
+
+    a {
+        font-family: v.$label-font-family;
+        font-size: 18px;
+        font-weight: 800;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #70846c;
+        letter-spacing: 1px;
+    }
+}
+
+footer {
+    height: 10vh;
+    background-color: v.$primary-color;
+    color: v.$secondary-color;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-family: v.$primary-font-family;
+        font-weight: 300;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+  }

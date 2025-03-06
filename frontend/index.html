@@ -3,27 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auction Site</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Auction House</title>
+    <link rel="stylesheet" href="./src/styles/layout.scss">
+    <link rel="stylesheet" href="./src/styles/home.scss">
     </head>
   <body>
-    <section>
-      <h1>All auctions</h1>
-    </section>
-    <section>
-  <table >
-      <thead>
-        <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td></td>
-        </tr>
-      </thead>
-      <tbody id="auctionRows"></tbody>
-    </table>
-  </section>
+    <header>
+      <a href="index.html">Auction House</a>
+    </header>
 
-    
+    <main class="auction-container">
+      <div class="heading">
+        <h2>All auctions</h2>
+      </div>
+      <div class="auction-table-container">
+        <table >
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody id="auctionRows"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <span>Copyright &copy; 2025 Auction House</span>
+    </footer>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

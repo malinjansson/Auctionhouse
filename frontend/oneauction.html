@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auction House</title>
+    <link rel="stylesheet" href="./src/styles/layout.scss">
 </head>
 <body>
 
-    <div class="oneauction-container">
+    <header>
+        <a href="index.html">Auction House</a>
+    </header>
 
-        <button id="backToAllAuctions">Back to all auctions</button>
-        <img id="auctionImg"/>
+    <main>
+        <div class="oneauction-container">
 
-        <h2>Auction:<span id="auctionName"></span></h2>
-
-        <div class="bid-container">
-            <p>Highest bidder:<span id="highestBidder"></span></p>
-            <p>Current price:<span id="currentPrice"></span></p>
+            <button id="backToAllAuctions">Back to all auctions</button>
+            <img id="auctionImg"/>
+    
+            <h2>Auction:<span id="auctionName"></span></h2>
+    
+            <div class="bid-container">
+                <p>Highest bidder:<span id="highestBidder"></span></p>
+                <p>Current price:<span id="currentPrice"></span></p>
+            </div>
+    
+            <div class="bidform-container">
+                <input type="text" id="bidderName" placeholder="Your name"/>
+                <input type="text" id="bidAmount" placeholder="Your bid"/>
+                <button id="placeBidBtn">Place bid</button>
+            </div>
         </div>
+    </main>
 
-        <div class="bidform-container">
-            <input type="text" id="bidderName" placeholder="Your name"/>
-            <input type="text" id="bidAmount" placeholder="Your bid"/>
-            <button id="placeBidBtn">Place bid</button>
-        </div>
-    </div>
+    <footer>
+        <span>Copyright &copy; 2025 Auction House</span>
+      </footer>
 
     <script type="module" src="./src/room.ts"></script>
 </body>
