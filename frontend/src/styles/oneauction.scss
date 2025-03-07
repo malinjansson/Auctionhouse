@@ -1,0 +1,37 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+
+.oneauction-container {
+    width: 100%;
+
+    .oneauction-content {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+
+
+        #backToAllAuctions {
+
+            width: 50%;
+            padding: 10px;
+            margin: auto;
+    
+            border-style: none;
+            border-radius: 3px;
+            background-color: #90a18c;
+            color: v.$secondary-color;
+            
+            font-family: v.$primary-font-family;
+            font-size: 12px;
+        }
+    
+        .img-container {
+            padding-top: 2em;
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
