@@ -6,6 +6,11 @@
     display: flex;
     flex-direction: column;
     padding: 3em;
+
+    @include m.forDesktop(desktop) {
+        width: 40%;
+        margin: auto;
+    }
 }
 
 
@@ -41,6 +46,10 @@
             border-radius: 3px;
             padding: 5px 20px;
             text-decoration: none;
+        }
+
+        &:last-child {
+            text-align: right;
         }
     }
 

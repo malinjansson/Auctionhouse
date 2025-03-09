@@ -24,16 +24,32 @@
         margin: auto;
         padding-top: 2em;
         padding-bottom: 3em;
+
+        @include m.forDesktop(desktop) {
+            flex-direction: row;
+            padding-top: 4em;
+            padding-bottom: 4em;
+            gap: 2em;
+        }
     
         .img-container {
     
             img {
                 width: 100%;
             }
+
+            @include m.forDesktop(desktop) {
+                width: 90%;
+            }
         }
 
         .bid-container {
             padding-top: 2em;
+
+            @include m.forDesktop(desktop) {
+                padding-top: 0;
+                width: 50%;
+            }
 
             .bid-info-container {
                 display: flex;
