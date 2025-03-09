@@ -20,16 +20,17 @@
                     <img id="auctionImg"/>
                 </div>
                 <div class="bid-container">
-                    <h2>Auction: <span id="auctionName"></span></h2>
-                    <p>Highest bidder: <span id="highestBidder"></span></p>
-                    <p>Current price: <span id="currentPrice"></span></p>
+                    <div class="bid-info-container">
+                        <h2 id="auctionName"></h2>
+                        <p>Highest bidder: <span id="highestBidder"></span></p>
+                        <p class="currentPrice">Current price: <span id="currentPrice"></span></p>
+                    </div>
                     <div class="bidform-container">
                         <input type="text" id="bidderName" placeholder="Your name"/>
                         <input type="text" id="bidAmount" placeholder="Your bid"/>
                         <button id="placeBidBtn">Place bid</button>
                     </div>
                 </div>
-                <button id="backToAllAuctions">Back to all auctions</button>
             </div>
         </div>
     </main>

@@ -4,33 +4,96 @@
 .oneauction-container {
     width: 100%;
 
+    #backToAllAuctions {
+        padding: 10px;
+        margin-left: 3em;
+
+        border-style: none;
+        border-radius: 3px;
+        background-color: v.$label-color;
+        color: v.$secondary-color;
+        
+        font-family: v.$primary-font-family;
+        font-size: 12px;
+    }
+
     .oneauction-content {
         display: flex;
         flex-direction: column;
         width: 80%;
         margin: auto;
-
-
-        #backToAllAuctions {
-
-            width: 50%;
-            padding: 10px;
-            margin: auto;
-    
-            border-style: none;
-            border-radius: 3px;
-            background-color: #90a18c;
-            color: v.$secondary-color;
-            
-            font-family: v.$primary-font-family;
-            font-size: 12px;
-        }
+        padding-top: 2em;
+        padding-bottom: 3em;
     
         .img-container {
-            padding-top: 2em;
     
             img {
                 width: 100%;
+            }
+        }
+
+        .bid-container {
+            padding-top: 2em;
+
+            .bid-info-container {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8em;
+
+                h2 {
+                    font-family: v.$heading-font-family;
+                    font-weight: 800;
+                    font-size: 18px;
+                    letter-spacing: 0.5px;
+                    color: v.$primary-color;
+                }
+    
+                p {
+                    font-family: v.$primary-font-family;
+                    font-weight: 400;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                }
+
+                #currentPrice {
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    text-decoration: underline;
+                    text-decoration-thickness: 3px;
+                    text-decoration-color: v.$label-color;
+                }
+            }
+
+            .bidform-container {
+                padding-top: 1.5em;
+                display: flex;
+                flex-direction: column;
+                gap: 0.8em;
+
+                input {
+                    padding: 10px;
+                    border-style: none;
+                    border: 0.5px solid v.$primary-color;
+                    border-radius: 3px;
+
+                    font-family: v.$primary-font-family;
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+
+                button {
+                    padding: 10px;
+                    border-style: none;
+                    border-radius: 3px;
+                    background-color: v.$label-color;
+                    color: v.$secondary-color;
+
+                    font-family: v.$primary-font-family;
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
             }
         }
     }
