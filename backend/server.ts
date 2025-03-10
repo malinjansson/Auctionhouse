@@ -32,7 +32,7 @@ const io = new Server(server,{
 
   socket.on('placeLatestBid', (data: {bidderName:string, bidAmount:number}) => {
     if (data.bidAmount < auction.currentBid.price) {
-      socket.emit('errorMessage', "Budet är för lågt")
+      socket.emit('errorMessage', "Your bid is too low")
       return;
     } 
     
