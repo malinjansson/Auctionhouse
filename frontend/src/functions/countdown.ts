@@ -27,7 +27,15 @@ export const updateCountdown = (data: Auction) => {
         const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
         const seconds = Math.floor((timeLeft / 1000) % 60);
-        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        let showCountdown = "";
+
+        showCountdown += days > 0 ? days + "d " : "";
+        showCountdown += (hours > 0 || days > 0) ? hours + "h " : "";
+        showCountdown += (minutes > 0 || hours > 0 || days > 0) ? minutes + "m " : "";
+        showCountdown += seconds + "s";
+
+        countdown.innerHTML = showCountdown;
     }
 }
 
