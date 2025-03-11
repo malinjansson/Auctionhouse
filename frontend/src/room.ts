@@ -56,7 +56,7 @@ import { Auction } from "./data/auction";
     const currentPrice = document.getElementById("currentPrice") as HTMLParagraphElement;
   
     highestBidder.innerHTML = data.bidderName
-    currentPrice.innerHTML = data.bidAmount.toString();
+    currentPrice.innerHTML = data.bidAmount.toString() + " kr";
     
   })
 
