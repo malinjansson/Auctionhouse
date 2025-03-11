@@ -33,8 +33,11 @@ import { Auction } from "./data/auction";
   })
 
   socket.on ('auctionData', (data: Auction) => {
-    const auctionName = document.getElementById("auctionName") as HTMLElement;
+    const auctionName = document.getElementById("auctionName") as HTMLHeadingElement;
     auctionName.innerHTML = data.name;
+
+    const endtime = document.getElementById("endtime") as HTMLParagraphElement;
+    endtime.innerHTML = data.endtime;
 
     const auctionImg = document.getElementById("auctionImg") as HTMLImageElement;
     auctionImg.src = data.img;
@@ -49,8 +52,8 @@ import { Auction } from "./data/auction";
 
     console.log(data.bidderName)
 
-    const highestBidder = document.getElementById("highestBidder") as HTMLElement;
-    const currentPrice = document.getElementById("currentPrice") as HTMLElement;
+    const highestBidder = document.getElementById("highestBidder") as HTMLParagraphElement;
+    const currentPrice = document.getElementById("currentPrice") as HTMLParagraphElement;
   
     highestBidder.innerHTML = data.bidderName
     currentPrice.innerHTML = data.bidAmount.toString();
