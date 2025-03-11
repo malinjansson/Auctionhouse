@@ -23,12 +23,15 @@
                     <div class="bid-info-container">
                         <h2 id="auctionName"></h2>
                         <div class="countdown-container">
-                            <p>Bidding ends: <span id="endtime"></span></p>
+                            <div class="endtime-container" id="endtime-container">
+                                <p>Bidding ends: <span id="endtime"></span></p>
+                            </div>
+                            <p id="countdown"></p>
                         </div>
                         <p>Highest bidder: <span id="highestBidder"></span></p>
-                        <p class="currentPrice">Current price: <span id="currentPrice"></span></p>
+                        <p class="currentPrice" id="price">Current price: <span id="currentPrice"></span></p>
                     </div>
-                    <div class="bidform-container">
+                    <div class="bidform-container" id="bidform-container">
                         <input type="text" id="bidderName" placeholder="Your name"/>
                         <input type="text" id="bidAmount" placeholder="Your bid"/>
                         <button id="placeBidBtn">Place bid</button>

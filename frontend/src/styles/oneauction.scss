@@ -57,11 +57,18 @@
                 gap: 0.8em;
 
                 .countdown-container {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 0.2;
                     padding-bottom: 1em;
-                    color: v.$label-color;
+                    color: #606060;
+
+                    .endtime-container {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    
+                    #countdown {
+                        font-family: v.$primary-font-family;
+                        font-weight: 600;
+                    }
                 }
 
                 h2 {

@@ -6,7 +6,7 @@ export class Auction{
         public currentBid: Bidder,
         public img: string,
         public minprice:number,
-        public endtime: string
+        public endtime: Date
     ) {}
 }
 

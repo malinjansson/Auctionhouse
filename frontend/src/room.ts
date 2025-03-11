@@ -1,5 +1,6 @@
 import { Socket,io } from "socket.io-client";
 import { Auction } from "./data/auction";
+import { updateCountdown } from "./functions/countdown";
 
   // // SMARTASTE ROOMHANTERINGEN
 
@@ -37,10 +38,13 @@ import { Auction } from "./data/auction";
     auctionName.innerHTML = data.name;
 
     const endtime = document.getElementById("endtime") as HTMLParagraphElement;
-    endtime.innerHTML = data.endtime;
+    endtime.innerHTML = data.endtime.toLocaleString();
 
     const auctionImg = document.getElementById("auctionImg") as HTMLImageElement;
     auctionImg.src = data.img;
+
+    data.endtime = new Date(data.endtime);
+    updateCountdown(data);
   })
 
   socket.on('errorMessage', (errorMessage:string) => {
@@ -59,4 +63,3 @@ import { Auction } from "./data/auction";
     currentPrice.innerHTML = data.bidAmount.toString() + " kr";
     
   })
-
