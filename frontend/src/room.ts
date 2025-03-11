@@ -37,7 +37,7 @@ import { updateCountdown } from "./functions/countdown";
     const auctionName = document.getElementById("auctionName") as HTMLHeadingElement;
     auctionName.innerHTML = data.name;
 
-    const endtime = document.getElementById("endtime") as HTMLParagraphElement;
+    const endtime = document.getElementById("endtime") as HTMLSpanElement;
     endtime.innerHTML = data.endtime.toLocaleString();
 
     const auctionImg = document.getElementById("auctionImg") as HTMLImageElement;
