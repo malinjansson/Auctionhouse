@@ -38,10 +38,6 @@ import { Auction } from "./data/auction";
 
     const auctionImg = document.getElementById("auctionImg") as HTMLImageElement;
     auctionImg.src = data.img;
-
-    document.getElementById("backToAllAuctions")?.addEventListener("click", () => {
-      window.location.href = "index.html";
-    });
   })
 
   socket.on('errorMessage', (errorMessage:string) => {
