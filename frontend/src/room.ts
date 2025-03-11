@@ -37,8 +37,15 @@ import { updateCountdown } from "./functions/countdown";
     const auctionName = document.getElementById("auctionName") as HTMLHeadingElement;
     auctionName.innerHTML = data.name;
 
+    const dateTime = new Date(data.endtime);
+
     const endtime = document.getElementById("endtime") as HTMLSpanElement;
-    endtime.innerHTML = data.endtime.toLocaleString();
+    endtime.innerHTML = dateTime.toLocaleString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      hour: '2-digit',
+      minute: '2-digit',
+    })
 
     const auctionImg = document.getElementById("auctionImg") as HTMLImageElement;
     auctionImg.src = data.img;
