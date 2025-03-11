@@ -1,7 +1,9 @@
 import { Auction } from "../data/auction";
 
+let dato:Auction
 
 export const updateCountdown = (data: Auction) => {
+    dato = data
     const currentTime = new Date().getTime();
     const endTime = data.endtime.getTime();
     const timeLeft = endTime - currentTime;
@@ -29,5 +31,5 @@ export const updateCountdown = (data: Auction) => {
     }
 }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
+const countdownInterval = setInterval(()=>updateCountdown(dato), 1000);
 
