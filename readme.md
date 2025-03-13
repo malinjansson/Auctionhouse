@@ -1,5 +1,5 @@
 # School assignment
-A auction site built with [Vite](https://vite.dev/) using Websockets, Typescript and SCSS. 
+An auction site built with [Vite](https://vite.dev/) using Websockets, Typescript and SCSS. 
 
 ## Backend
 * smart room management is implemented on both the server and the client.
