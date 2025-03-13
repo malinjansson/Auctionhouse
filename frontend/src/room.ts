@@ -54,7 +54,7 @@ import { updateCountdown } from "./functions/countdown";
     updateCountdown(data);
 
     const startPrice = document.getElementById("startPrice") as HTMLSpanElement;
-    startPrice.innerHTML = data.minprice.toString();
+    startPrice.innerHTML = data.minprice.toString() + " kr";
   })
 
   socket.on('errorMessage', (errorMessage:string) => {

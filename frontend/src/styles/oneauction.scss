@@ -74,6 +74,16 @@
                     }
                 }
 
+                #startPriceContainer {
+                   text-transform: uppercase;
+
+                   p {
+                    font-family: v.$primary-font-family;
+                    font-weight: 600;
+                    color: #62544b;
+                   }
+                }
+
                 h2 {
                     font-family: v.$heading-font-family;
                     font-weight: 800;
