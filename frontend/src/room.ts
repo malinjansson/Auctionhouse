@@ -52,6 +52,9 @@ import { updateCountdown } from "./functions/countdown";
 
     data.endtime = new Date(data.endtime);
     updateCountdown(data);
+
+    const startPrice = document.getElementById("startPrice") as HTMLSpanElement;
+    startPrice.innerHTML = data.minprice.toString();
   })
 
   socket.on('errorMessage', (errorMessage:string) => {
@@ -61,12 +64,10 @@ import { updateCountdown } from "./functions/countdown";
 
   socket.on ('updated bid', (data: {bidderName:string, bidAmount:string}) => {
 
-    console.log(data.bidderName)
-
     const highestBidder = document.getElementById("highestBidder") as HTMLParagraphElement;
-    const currentPrice = document.getElementById("currentPrice") as HTMLParagraphElement;
+    const currentBid = document.getElementById("currentBid") as HTMLParagraphElement;
   
     highestBidder.innerHTML = data.bidderName
-    currentPrice.innerHTML = data.bidAmount.toString() + " kr";
+    currentBid.innerHTML = data.bidAmount.toString() + " kr";
     
   })

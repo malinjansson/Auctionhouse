@@ -11,18 +11,22 @@ export const updateCountdown = (data: Auction) => {
     const countdown = document.getElementById("countdown") as HTMLParagraphElement;
     const endtime = document.getElementById("endtime-container") as HTMLDivElement;
     const bidForm = document.getElementById("bidform-container") as HTMLDivElement;
-    const price = document.getElementById("price") as HTMLParagraphElement;
+    const bid = document.getElementById("bid") as HTMLParagraphElement;
+    const startPriceContainer = document.getElementById("startPriceContainer") as HTMLParagraphElement;
 
     if (timeLeft <= 0) {
         countdown.innerHTML = "Auction is closed";
         if (endtime) {
             endtime.remove();
         }
+        if(startPriceContainer) {
+            startPriceContainer.remove();
+        }
         if (bidForm) {
             bidForm.remove();
         }
-        if (price && price.firstChild) {
-            price.firstChild.textContent = "Final price: "
+        if (bid && bid.firstChild) {
+            bid.firstChild.textContent = "Final price: "
         }
 
         clearInterval(countdownInterval);
