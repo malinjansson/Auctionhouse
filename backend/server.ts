@@ -4,6 +4,7 @@ import { Server, Socket } from 'socket.io';
 import *  as data  from './data/database';
 import cors from 'cors';
 import { Auction, Bidder } from './data/auction';
+import { updateBid } from './data/database';
 
 const app = express();
 app.use(cors())
@@ -40,6 +41,7 @@ const io = new Server(server,{
     auction.currentBid.name = data.bidderName;
 
     io.to(roomName).emit ('updated bid', {bidderName:data.bidderName, bidAmount:data.bidAmount})
+    updateBid(auction.id, auction.currentBid.name, auction.currentBid.price);
   })
 
   // Handle disconnection

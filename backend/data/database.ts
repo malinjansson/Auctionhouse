@@ -25,4 +25,7 @@ export async function Init(){
     })
 };
 
-
+export async function updateBid(id: string, biddername: string, bidprice: number) {
+    const conn = await connection; 
+    await conn.query("UPDATE auction set biddername=?, bidprice=? where id=?", [biddername,bidprice, id]);
+}
