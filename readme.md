@@ -1,5 +1,5 @@
 # School assignment
-* Created an auction site using Websockets 
+* A auction site built with <ins>[Vite](https://vite.dev/)</ins> using Websockets, Typescript and SCSS. 
 
 ## Backend
 * smart room management is implemented on both the server and the client.
