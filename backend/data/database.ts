@@ -1,11 +1,28 @@
-import { Auction } from "./auction";
+import { RowDataPacket } from "mysql2";
+import { Auction, Bidder } from "./auction";
+import { connection } from "./connection";
 
 export let auctions:Array<Auction> = []
 
-export function Init(){
-    auctions.push(new Auction("M-12", "Camera",{name:"None", price:0}, "src/assets/camera.jpg", 200, new Date('2025-03-14T14:20:00')))
-    auctions.push(new Auction("A-67", "Sofa",{name:"None", price:0}, "src/assets/sofa.jpg", 150, new Date('2025-03-28T09:14:00')))
-    auctions.push(new Auction("S-991","Pink plate",{name:"None", price:0}, "src/assets/pinkplate.jpg", 50, new Date('2025-03-10T11:48:00')))
+export interface databaseauction extends RowDataPacket {
+    id:string, 
+    name:string, 
+    img: string,
+    minprice:number,
+    endtime: Date
+    biddername: string,
+    bidprice: number
+}
+
+export async function Init(){
+    const conn = await connection;
+    const [rows] = await conn.query<databaseauction[]>("SELECT * FROM auction")
+
+    rows.forEach((row: databaseauction) => {
+        const auction = new Auction(row.id, row.name, new Bidder(row.biddername, row.bidprice), row.img, row.minprice, row.endtime)
+
+        auctions.push(auction);
+    })
 };
 
 
