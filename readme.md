@@ -56,7 +56,7 @@ export async function updateBid(id: string, biddername: string, bidprice: number
   #### Mobile view
   <p float="left">
     <img src="./demo/2.png" width="300" height="520" />
-    <img src="./demo/3.png" width="300" height="520"/>
+    <img src="./demo/3.png" width="300" height="520" />
   </p>
 ____________
 
@@ -88,17 +88,14 @@ npm install
 cd backend
 npm run dev
 ```
-```
 Server is running on http://localhost:3000
-```
 
 #### Frontend
 ```
 cd frontend
 npm run dev
 ```
-```
 Local: http://localhost:5173/
-```
+
 
 
