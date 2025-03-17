@@ -95,7 +95,7 @@ Server is running on http://localhost:3000
 cd frontend
 npm run dev
 ```
-Local: http://localhost:5173/
+The application will be available at local: http://localhost:5173/
 
 
 
